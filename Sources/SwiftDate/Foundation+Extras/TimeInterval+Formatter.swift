@@ -14,6 +14,9 @@ import Foundation
 
 public extension TimeInterval {
 
+  #if os(Linux)
+  #else
+
 	struct ComponentsFormatterOptions {
 
 		/// Fractional units may be used when a value cannot be exactly represented using the available units.
@@ -165,4 +168,5 @@ public extension TimeInterval {
 		return toUnits([component], to: refDate)[component]
 	}
 
+  #endif
 }
